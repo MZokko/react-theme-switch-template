@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ContentContainer from './components/UI/ContentContainer';
+import Title from './components/UI/Title';
+import TopBar from './components/UI/TopBar';
+import { ThemeStore } from './contexts/ThemeStore';
+import Theme from './Theme';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ThemeStore>
+        <Theme>
+          <TopBar />
+          <ContentContainer>
+            <Title>THEME SWITCHING WITH STYLED-COMPONENTS</Title>
+          </ContentContainer>
+        </Theme>
+      </ThemeStore>
+    </>
   );
-}
+};
 
 export default App;
